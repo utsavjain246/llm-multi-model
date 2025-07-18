@@ -146,19 +146,4 @@ Each model hit appends one row to `logs/api_logs.csv`:
 
 ## 9 · Project Structure
 
-llm-gateway/
-├── logs/
-│ └── api_logs.csv
-├── src/
-│ ├── server.js
-│ ├── middleware/
-│ │ ├── validation.js
-│ │ └── errorHandler.js
-│ └── services/
-│ ├── llmService.js
-│ └── loggingService.js
-├── tests/
-│ └── server.test.js
-├── .env.example
-├── package.json
-└── README.md
+<pre lang="md"> <code> ``` llm-gateway/ ├── logs/ │ └── api_logs.csv ├── src/ │ ├── server.js │ ├── middleware/ │ │ ├── validation.js │ │ └── errorHandler.js │ ├── services/ │ │ ├── llmService.js │ │ └── loggingService.js │ └── tests/ │ └── server.test.js ├── .env.example ├── package.json └── README.md ``` </code> </pre>
