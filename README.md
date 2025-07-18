@@ -6,7 +6,7 @@ Compare their responses, log token counts & latency, and analyze everything with
 Currently supports:
 
 - [Mistral 7B Instruct (OpenRouter Free)](https://openrouter.ai/docs/models/mistralai/mistral-7b-instruct)
-- [Llama-3 70B Turbo (OpenRouter Free)](https://openrouter.ai/docs/models/meta-llama/llama-3-turbo)
+- [Llama 3.2 11B Vision Instruct (OpenRouter Free)](https://openrouter.ai/meta-llama/llama-3.2-11b-vision-instruct:free).
   <br>
   Easily extend to support any OpenRouter-compatible LLM.
 
@@ -47,21 +47,29 @@ cp .env.example .env # then paste your openrouter key
 npm run dev # nodemon
 
 ### 4· probe (single model)
+<pre>
 
-curl -X POST http://localhost:3000/api/generate
--H "Content-Type: application/json"
--d '{ "prompt":"Tell me a joke about AI.",
-"model" :"mistral",
-"max_tokens":40,
-"temperature":0.8 }'
+  curl -X POST http://localhost:3000/api/generate
+  -H "Content-Type: application/json"
+  -d '{ "prompt":"Tell me a joke about AI.",
+  "model" :"mistral",
+  "max_tokens":40,
+  "temperature":0.8 }'
+  
+</pre>
+
 
 ### 5· probe (two models at once)
 
-curl -X POST http://localhost:3000/api/generate
--H "Content-Type: application/json"
--d '{ "prompt":"Give me a haiku on resilience.",
-"model":["mistral","llama3"],
-"max_tokens":64 }'
+<pre>
+  curl -X POST http://localhost:3000/api/generate
+  -H "Content-Type: application/json"
+  -d '{ "prompt":"Give me a haiku on resilience.",
+  "model":["mistral","llama3"],
+  "max_tokens":64 }'
+</pre>
+
+
 
 ---
 
@@ -78,40 +86,42 @@ curl -X POST http://localhost:3000/api/generate
 
 #### 1.1 · Response – single-model
 
-{
-"text": "Quantum entanglement is ...",
-"model": "llama3",
-"usage": {
-"prompt_tokens": 8,
-"completion_tokens": 43,
-"total_tokens": 51
-},
-"latency_ms": 1572,
-"request_id": "0189f1d5-..."
-}
+<pre> {
+  "text": "Quantum entanglement is ...",
+  "model": "llama3",
+  "usage": {
+  "prompt_tokens": 8,
+  "completion_tokens": 43,
+  "total_tokens": 51
+  },
+  "latency_ms": 1572,
+  "request_id": "0189f1d5-..."
+} </pre>
 
 #### 1.2 · Response – multi-model
 
+<pre>
 {
-"prompt": "Give me a haiku on resilience.",
-"results": [
-{
-"model": "mistral",
-"text": "...",
-"usage": { "prompt_tokens": 10, "completion_tokens": 28, "total_tokens": 38 },
-"latency_ms": 980,
-"request_id": "0189f20a-..."
-},
-{
-"model": "llama3",
-"text": "...",
-"usage": { "prompt_tokens": 10, "completion_tokens": 30, "total_tokens": 40 },
-"latency_ms": 1650,
-"request_id": "0189f20a-..."
-}
-],
-"max_latency_ms": 1650
-}
+  "prompt": "Give me a haiku on resilience.",
+  "results": [
+  {
+  "model": "mistral",
+  "text": "...",
+  "usage": { "prompt_tokens": 10, "completion_tokens": 28, "total_tokens": 38 },
+  "latency_ms": 980,
+  "request_id": "0189f20a-..."
+  },
+  {
+  "model": "llama3",
+  "text": "...",
+  "usage": { "prompt_tokens": 10, "completion_tokens": 30, "total_tokens": 40 },
+  "latency_ms": 1650,
+  "request_id": "0189f20a-..."
+  }
+  ],
+  "max_latency_ms": 1650
+} 
+</pre>
 
 ---
 
@@ -144,6 +154,23 @@ Each model hit appends one row to `logs/api_logs.csv`:
 | `400 Bad Request`       | `max_tokens` > 4096 or invalid model ID  | Lower token count / correct ID                             |
 | No CSV rows             | No write permission or wrong path        | Ensure `logs/` exists & app can write                      |
 
-## 9 · Project Structure
+## Project Structure
+<pre>
+llm-gateway/
+├── logs/
+│   └── api_logs.csv
+├── src/
+│   ├── server.js
+│   ├── middleware/
+│   │   ├── validation.js
+│   │   └── errorHandler.js
+│   └── services/
+│       ├── llmService.js
+│       └── loggingService.js
+├── tests/
+│   └── server.test.js
+├── .env.example
+├── package.json
+└── README.md</pre>
 
-<pre lang="md"> <code> ``` llm-gateway/ ├── logs/ │ └── api_logs.csv ├── src/ │ ├── server.js │ ├── middleware/ │ │ ├── validation.js │ │ └── errorHandler.js │ ├── services/ │ │ ├── llmService.js │ │ └── loggingService.js │ └── tests/ │ └── server.test.js ├── .env.example ├── package.json └── README.md ``` </code> </pre>
+
