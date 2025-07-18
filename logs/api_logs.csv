@@ -1,0 +1,33 @@
+4aa5715b-ab55-43e4-92c7-ddd4a912a5d9,2025-07-17T11:12:08.608Z,mistral,Explain quantum computing in 1 sentence.,"Quantum computing is a type of computing that uses quantum-mechanical phenomena, such as superposition and entanglement, to perform operations on data in a fundamentally different,",1768,8,36,44,true,
+a17491e9-cc9d-4a64-9e92-0fce521c9a83,2025-07-17T13:49:12.349Z,llama3,Explain quantum entanglement in one sentence.,"Quantum entanglement is a phenomenon in which two or more particles become correlated in such a way that the state of one particle is dependent on the state of the other, regardless of the distance between them.",3006,10,42,52,true,
+16013aa1-534e-48f8-b39b-aa8c8c3df19e,2025-07-17T13:53:03.813Z,mistral,Tell me a joke in hindi.,"Of course! Here's a popular Hindi joke:
+
+Hindi: दो घड़े और एक घड़ी कितने साथ मिलेंगे?
+
+Translation: How will two horses and a chair come together?
+
+Hindi: घड़ी घड़ी घड़ी बैठ जाएंगी (Ghari ghari ghari baith jaeenge)
+
+Translation: The horses will sit on each other. (Literally: Chairs will sit on chairs)
+
+This is a play on words. In Hindi, ""ghari"" can mean both ""chair"" and ""horses"" in a metaphorical sense when used in the plural to describe a group of horses. So, the joke is about the horses sitting on each other, but it sounds as if chairs are sitting on chairs. It's a common form of humor in India where language plays a big role.",5328,8,255,263,true,
+55f74dd9-af05-4ac4-9e79-806577dad97e,2025-07-17T19:04:58.841Z,llama3,Tell me a joke.,"Here's one:
+
+What do you call a fake noodle?
+
+An impasta.",2436,5,21,26,true,
+a781bbf9-bdd1-4d1f-bc7c-84858ec6832b,2025-07-17T19:05:23.640Z,mistral,Tell me a tech joke.,"Here's a classic tech joke for you:
+
+Why don't programmers like nature?
+
+Because it has too many bugs!
+
+This joke is a nod to the fact that programmers spend a lot of their time debugging, or removing errors, from their code. Nature, on the other hand, is full of insects and other creatures that can be considered bugs. So, the humor lies in the comparison between the two.",3220,6,87,93,true,
+ea2da844-7acd-44ea-b9e5-ef6fe1cfa464,2025-07-17T19:06:20.551Z,llama3,Tell me a tech joke.,"Why do programmers prefer dark mode?
+
+Because light attracts bugs.",2723,6,14,20,true,
+cbb24832-7871-4d38-a963-21360f402bcd,2025-07-17T19:06:22.400Z,mistral,Tell me a tech joke.,"Here's a classic tech joke for you:
+
+Why did the HTML file refuse to play with the CSS file?
+
+Because it didn't want to inline its style! (Inline is a term used in CSS for putting CSS code directly into HTML, and it's often discouraged due to maintainability reasons.)",4567,6,64,70,true,
